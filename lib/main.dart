@@ -1,6 +1,7 @@
 import 'package:delimeals/data/dummy_data.dart';
 import 'package:delimeals/screens/tabs.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:google_fonts/google_fonts.dart';
 import 'package:delimeals/screens/categories.dart';
@@ -14,7 +15,9 @@ final theme = ThemeData(
       seedColor: const Color.fromARGB(255, 131, 57, 0),
     ));
 
-void main() => runApp(App());
+void main() {
+  runApp(ProviderScope(child: App()));
+}
 
 class App extends StatelessWidget {
   @override
